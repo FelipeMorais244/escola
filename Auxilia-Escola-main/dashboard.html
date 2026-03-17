@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Auxilia Escola</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-container">
+
+<header class="dashboard-header">
+
+<div class="header-content">
+
+<button class="btn-logout" id="logoutBtn">
+<i class="fas fa-sign-out-alt"></i>
+</button>
+
+<h1>Auxilia Escola</h1>
+<p id="welcomeMessage">Olá, Estudante!</p>
+
+</div>
+</header>
+
+<main class="dashboard-main">
+
+<nav class="tabs-nav">
+
+<button class="tab-btn active" data-tab="home">
+<i class="fas fa-home"></i>
+<span>Início</span>
+</button>
+
+<button class="tab-btn" data-tab="menu">
+<i class="fas fa-utensils"></i>
+<span>Cardápio</span>
+</button>
+
+<button class="tab-btn" data-tab="todo">
+<i class="fas fa-tasks"></i>
+<span>Tarefas</span>
+</button>
+
+<button class="tab-btn" data-tab="profile">
+<i class="fas fa-user"></i>
+<span>Perfil</span>
+</button>
+
+</nav>
+
+<div class="tab-content">
+
+    <section id="home" class="tab-pane active">
+        <div class="section-header">
+            <h2>Resumo do Dia</h2>
+        </div>
+        
+        <div class="home-grid">
+            <div class="summary-card">
+                <i class="fas fa-utensils"></i>
+                <div>
+                    <h3>Cardápio de Hoje</h3>
+                    <p id="todayMealText">Carregando...</p>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Suas Tarefas</h3>
+                    <p id="todoCountText">Você tem 0 tarefas pendentes.</p>
+                </div>
+            </div>
+            
+            <!-- NOVO CARD PRESENÇA -->
+            <div class="summary-card">
+                <i class="fas fa-user-check"></i>
+                <div>
+                    <h3>Taxa de Presença</h3>
+                    <p id="attendanceText">Carregando...</p>
+                </div>
+            </div>
+            
+            <div class="info-banner">
+                <i class="fas fa-calendar-alt"></i>
+                <p>O próximo evento escolar é a <strong>Feira de Ciências</strong> em 15 de Abril.</p>
+            </div>
+        </div>
+    </section>
+
+<section id="menu" class="tab-pane">
+
+<div class="section-header">
+<h2>Cardápio da Semana</h2>
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-card" data-day="1">
+<span class="day">Segunda</span>
+<p class="meal">Arroz, Feijão, Frango Grelhado e Salada</p>
+</div>
+
+<div class="menu-card" data-day="2">
+<span class="day">Terça</span>
+<p class="meal">Macarronada à Bolonhesa e Fruta</p>
+</div>
+
+<div class="menu-card" data-day="3">
+<span class="day">Quarta</span>
+<p class="meal">Feijoada Light, Arroz e Couve</p>
+</div>
+
+<div class="menu-card" data-day="4">
+<span class="day">Quinta</span>
+<p class="meal">Iscas de Carne, Purê de Batata e Legumes</p>
+</div>
+
+<div class="menu-card" data-day="5">
+<span class="day">Sexta</span>
+<p class="meal">Peixe Assado, Arroz Integral e Mix de Folhas</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="todo" class="tab-pane">
+
+<div class="section-header">
+<h2>Minha Lista de Afazeres</h2>
+</div>
+
+<div class="todo-container">
+
+<form id="todoForm" class="todo-form">
+
+<input type="text" id="todoInput" placeholder="Adicionar nova tarefa...">
+
+<button type="submit" class="btn-add-todo">
+<i class="fas fa-plus"></i>
+</button>
+
+</form>
+
+<ul id="todoList" class="todo-list"></ul>
+
+</div>
+
+</section>
+
+<section id="profile" class="tab-pane">
+
+<div class="section-header">
+<h2>Meu Perfil</h2>
+</div>
+
+<div class="profile-container">
+
+<div class="profile-header">
+
+<div class="profile-avatar">
+<i class="fas fa-user-graduate"></i>
+</div>
+
+<h3 id="profileName">Estudante Auxilia</h3>
+<p id="profileEmail">estudante@auxilia.com.br</p>
+
+</div>
+
+<div class="profile-info-list">
+
+<div class="info-item">
+<span class="info-label">Matrícula:</span>
+<span class="info-value">2024001589</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Turma:</span>
+<span class="info-value">3º Ano B - Ensino Médio</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Status:</span>
+<span class="info-value status-active">Ativo</span>
+</div>
+
+</div>
+
+<button class="btn-edit-profile">
+<i class="fas fa-edit"></i>
+Editar Perfil
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
